@@ -1,6 +1,6 @@
 # EDLING - Counseling Platform
 
-A simple counseling platform where students can book sessions with counselors.
+College counseling management system for scheduling counseling sessions.
 
 ## Project Structure
 
