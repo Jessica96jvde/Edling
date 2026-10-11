@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global-font.css" />
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="admin-page">
+        <div class="header">
+            <div class="user-info">
+                <div class="user-avatar" style="background-image: url('assets/user.png');" aria-hidden="true"></div>
+                <span>Admin Dashboard</span>
+            </div>
+            <div class="header-right">
+                <a href="index.html" class="logout-btn" aria-label="Log out">
+                    <img src="assets/logout.png" alt="Logout" class="logout-icon" />
+                    <span class="logout-text">Log out</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="counselors-section">
+                <h2>Counselors:</h2>
+                <div class="counselors-container">
+                    <div class="loading">Loading counselors...</div>
+                </div>
+            </div>
+            
+            <!-- Session Creation Modal -->
+            <div class="modal" id="session-modal" style="display: none;">
+                <div class="modal-content">
+                    <h3>Request New Session</h3>
+                    <form id="session-form">
+                        <div class="form-group">
+                            <label>Send session request to:</label>
+                            <select id="counselor-select" required>
+                                <option value="">Select Counselor</option>
+                            </select>
+                        </div>
+                        <p style="color: #666; font-size: 14px; margin: 15px 0;">The counselor will decide the date, time, and topic for the session.</p>
+                        <div class="form-actions">
+                            <button type="button" onclick="closeSessionModal()">Cancel</button>
+                            <button type="submit">Send Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="schedule-section">
+                <h2>Session Schedule:</h2>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Counselor</th>
+                            <th>Date and Time</th>
+                            <th>No. of Registrations</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="sessions-table-body">
+                        <tr>
+                            <td colspan="5">Loading sessions...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

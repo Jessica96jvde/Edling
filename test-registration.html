@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Registration</title>
+</head>
+<body>
+    <h1>Registration Test</h1>
+    <button onclick="testRegistration()">Test Registration</button>
+    <div id="result"></div>
+
+    <script>
+        async function testRegistration() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                document.getElementById('result').innerHTML = 'No token found - please login first';
+                return;
+            }
+
+            try {
+                // First get sessions
+                const sessionsResponse = await fetch('http://localhost:3000/api/sessions', {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                
+                const sessions = await sessionsResponse.json();
+                console.log('Available sessions:', sessions);
+                
+                if (sessions.length === 0) {
+                    document.getElementById('result').innerHTML = 'No sessions available';
+                    return;
+                }
+                
+                // Try to register for first confirmed session
+                const confirmedSession = sessions.find(s => s.status === 'confirmed');
+                if (!confirmedSession) {
+                    document.getElementById('result').innerHTML = 'No confirmed sessions available';
+                    return;
+                }
+                
+                console.log('Attempting to register for session:', confirmedSession._id);
+                
+                const response = await fetch(`http://localhost:3000/api/sessions/${confirmedSession._id}/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                console.log('Registration response:', data);
+                
+                document.getElementById('result').innerHTML = `
+                    <p>Status: ${response.status}</p>
+                    <p>Response: ${JSON.stringify(data, null, 2)}</p>
+                `;
+                
+            } catch (error) {
+                console.error('Test error:', error);
+                document.getElementById('result').innerHTML = `Error: ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html>

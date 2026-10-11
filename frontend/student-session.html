@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Student Session</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global-font.css" />
+    <link rel="stylesheet" href="css/student-session.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="student-session-page">
+        <header class="header">
+            <div class="user-info">
+                <div class="user-avatar" style="background-image: url('assets/user.png');" aria-hidden="true"></div>
+                <span>Student Session</span>
+            </div>
+
+            <div class="header-right">
+                <a href="student-menu.html" class="home-link" aria-label="Home">
+                    <img src="assets/home.png" alt="Home" class="home-icon" />
+                </a>
+
+                <a href="index.html" class="logout-btn" aria-label="Log out">
+                    <img src="assets/logout.png" alt="Logout" class="logout-icon" />
+                    <span class="logout-text">Log out</span>
+                </a>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <div class="tab active">Session</div>
+            <a href="student-details.html" class="tab">My Details</a>
+            <a href="student-feedback.html" class="tab">Feedback</a>
+        </div>
+
+        <div class="content">
+            <section class="sessions-list">
+                <h2 style="margin:0 0 12px; color:var(--blue-900);">Sessions Available</h2>
+                <div class="sessions-container">
+                    <!-- Sessions will be loaded dynamically -->
+                    <div class="loading">Loading sessions...</div>
+                </div>
+            </section>
+
+            <section class="my-sessions section">
+                <h2 style="margin:0 0 12px; color:var(--blue-900);">My Sessions</h2>
+                <div class="my-sessions-container">
+                    <div class="no-sessions card">
+                        <div class="calendar-large" style="background-image: url('assets/calendar.png');" aria-hidden="true"></div>
+                        <p>No Sessions Registered yet</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

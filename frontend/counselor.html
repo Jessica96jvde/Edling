@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counsellor Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global-font.css" />
+    <link rel="stylesheet" href="css/councelor.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="counselor-page">
+        <div class="header">
+            <div class="user-info">
+                <div class="user-avatar" style="background-image: url('assets/user.png');" aria-hidden="true"></div>
+                <span>Counselor Dashboard</span>
+            </div>
+            <div class="header-right">
+                <a href="index.html" class="logout-btn" aria-label="Log out">
+                    <img src="assets/logout.png" alt="Logout" class="logout-icon" />
+                    <span class="logout-text">Log out</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="schedule-requests">
+                <h2>Schedule Requests:</h2>
+                <div class="requests-container card">
+                    <div class="loading">Loading requests...</div>
+                </div>
+            </div>
+
+            <div class="upcoming-sessions">
+                <h2>My Sessions:</h2>
+                <div class="sessions-container card">
+                    <div class="loading">Loading sessions...</div>
+                </div>
+            </div>
+
+            <div class="rescheduled-sessions">
+                <h2>Rescheduled Sessions:</h2>
+                <div class="rescheduled-sessions-container card">
+                    <div class="loading">Loading rescheduled sessions...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

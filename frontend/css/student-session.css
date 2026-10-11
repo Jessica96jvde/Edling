@@ -1,0 +1,312 @@
+/* Unified stylesheet for student session page */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root{
+    --blue-900: #0d47a1;
+    --blue-800: #1565c0;
+    --blue-700: #1976d2;
+    --blue-100: #e3f2fd;
+    --blue-200: #bbdefb;
+    --accent-shadow: rgba(13,71,161,0.18);
+    --text-dark: #1a237e;
+    --surface: #ffffff;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--blue-100) 0%, var(--blue-200) 100%);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4;
+}
+
+/* Page container */
+.student-session-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--blue-100) 0%, #bbdefb 100%);
+    color: var(--blue-900);
+    padding-bottom: 40px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--blue-700) 0%, var(--blue-800) 100%);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 10px rgba(13,71,161,0.12);
+    color: #fff;
+}
+
+/* user-info (avatar + label) */
+.user-info {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Avatar */
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-image: url('../assets/Login.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 3px solid rgba(255,255,255,0.85);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    flex-shrink: 0;
+}
+
+/* header-right group */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Home button container */
+.home-link {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+    text-decoration: none;
+    transition: transform .14s ease, background .14s ease;
+}
+.home-link:hover { 
+    transform: translateY(-3px); 
+    background: rgba(255,255,255,0.12); 
+}
+
+.home-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Logout button */
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.95);
+    color: var(--blue-800);
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .14s ease, box-shadow .14s ease, background .14s ease;
+}
+.logout-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(13,71,161,0.12);
+    background: #ffffff;
+}
+
+.logout-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+}
+
+.logout-text {
+    line-height: 1;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    background: var(--surface);
+    border-bottom: 2px solid rgba(227,242,253,0.8);
+}
+
+.tab {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--blue-800);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all .2s ease;
+}
+.tab.active {
+    color: var(--blue-900);
+    border-bottom-color: var(--blue-700);
+    background: #f5f8ff;
+    font-weight: 700;
+}
+
+/* content wrapper */
+.content {
+    max-width: 980px;
+    margin: 28px auto;
+    padding: 0 20px;
+}
+
+/* Sessions page specific styles */
+.sessions-list {
+    margin-bottom: 32px;
+}
+
+.session-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 16px;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(13,71,161,0.08);
+    transition: transform .14s ease, box-shadow .14s ease;
+}
+.session-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(13,71,161,0.12);
+}
+
+.session-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.stethoscope-icon {
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.doctor-name {
+    font-weight: 700;
+    color: var(--blue-900);
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.datetime {
+    color: var(--blue-800);
+    font-size: 13px;
+}
+
+.session-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.calendar-icon {
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.my-sessions {
+    margin-top: 32px;
+}
+
+.no-sessions {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(13,71,161,0.08);
+    color: var(--blue-800);
+}
+
+.calendar-large {
+    width: 64px;
+    height: 64px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto 16px;
+    opacity: 0.6;
+}
+
+.card {
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(13,71,161,0.08);
+}
+
+.section {
+    margin-bottom: 24px;
+}
+
+.btn {
+    border: none;
+    border-radius: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .14s ease, box-shadow .14s ease;
+}
+
+.btn-primary {
+    background: var(--blue-900);
+    color: #fff;
+    padding: 10px 18px;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(13,71,161,0.12);
+}
+
+.register-btn {
+    background: var(--blue-900);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .14s ease, box-shadow .14s ease;
+}
+.register-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(13,71,161,0.12);
+}
+
+/* responsive */
+@media (max-width: 720px) {
+    .session-item { 
+        flex-direction: column; 
+        gap: 16px; 
+        text-align: center; 
+    }
+    .session-left { 
+        flex-direction: column; 
+        gap: 12px; 
+    }
+    .session-right { 
+        justify-content: center; 
+    }
+}
+
+@media (max-width: 540px) {
+    .header { flex-direction: column; align-items: stretch; }
+    .header-right { justify-content: space-between; gap: 8px; }
+    .home-link { width: 36px; height: 36px; border-radius: 8px; }
+    .home-icon { width: 18px; height: 18px; }
+    .logout-icon { width: 16px; height: 16px; }
+    .logout-text { display: none; }
+}

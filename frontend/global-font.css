@@ -1,0 +1,24 @@
+/* Global Font Application - Averia Serif Libre */
+* {
+    font-family: 'Averia Serif Libre', serif !important;
+}
+
+body, html {
+    font-family: 'Averia Serif Libre', serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Averia Serif Libre', serif !important;
+}
+
+p, span, div, label, input, textarea, select, button {
+    font-family: 'Averia Serif Libre', serif !important;
+}
+
+table, th, td {
+    font-family: 'Averia Serif Libre', serif !important;
+}
+
+.error-message, .success-message {
+    font-family: 'Averia Serif Libre', serif !important;
+}

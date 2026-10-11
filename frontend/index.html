@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global-font.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-page">
+            <div class="login-left">
+                <!-- use a div so your CSS background-image on .illustration is applied -->
+                <div class="illustration" style="background-image: url('assets/Login.jpg');" aria-hidden="true"></div>
+            </div>
+
+            <div class="login-right">
+                <div class="login-header">
+                    <label for="user-role">Select Role:</label>
+                    <select id="user-role" class="user-select">
+                        <option value="student-menu.html">Student</option> <!-- Default role -->
+                        <option value="admin.html">Admin</option>
+                        <option value="counselor.html">Counselor</option>
+                    </select>
+                </div>
+
+                <h1>EDLING</h1>
+                <h1>LOGIN</h1>
+                <p>PLEASE ENTER YOUR DETAILS</p>
+
+                <form id="login-form">
+                    <div class="form-group">
+                        <label>USER NAME:</label>
+                        <input type="text" class="input-field" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>PASSWORD:</label>
+                        <input type="password" class="input-field" required />
+                    </div>
+
+                    <button type="submit" class="login-btn">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

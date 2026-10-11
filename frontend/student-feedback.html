@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global-font.css" />
+    <link rel="stylesheet" href="css/student-feedback.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="student-feedback-page">
+        <div class="header">
+            <div class="user-info">
+                <div class="user-avatar" style="background-image: url('assets/user.png');" aria-hidden="true"></div>
+                <span>Student Feedback</span>
+            </div>
+            <div class="header-right">
+                <a href="student-menu.html" class="home-link" aria-label="Home">
+                    <img src="assets/home.png" alt="Home" class="home-icon" />
+                </a>
+                <a href="index.html" class="logout-btn" aria-label="Log out">
+                    <img src="assets/logout.png" alt="Logout" class="logout-icon" />
+                    <span class="logout-text">Log out</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <a href="student-session.html" class="tab">Session</a>
+            <a href="student-details.html" class="tab">My Details</a>
+            <div class="tab active">Feedback</div>
+        </div>
+        
+        <div class="content">
+            <div class="details-form">
+                <h2>Give Feedback</h2>
+                <form class="form-container" id="feedback-form">
+                    <div class="form-group">
+                        <label for="session-select">Select Completed Session</label>
+                        <select id="session-select">
+                            <option value="">Loading sessions...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="star-rating" role="radiogroup" aria-label="Rating">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback-text">Comments</label>
+                        <textarea id="feedback-text" placeholder="Write your feedback..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-feedback-btn">Submit Feedback</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global-font.css" />
+    <link rel="stylesheet" href="css/student-details.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="student-details-page">
+        <header class="header">
+            <div class="user-info">
+                <!-- profile avatar with image -->
+                <div class="user-avatar" style="background-image: url('assets/user.png');" aria-hidden="true"></div>
+                <span>Student Details</span>
+            </div>
+            
+            <div class="header-right">
+                <!-- home button with icon -->
+                <a href="student-menu.html" class="home-link" aria-label="Home">
+                    <img src="assets/home.png" alt="Home" class="home-icon" />
+                </a>
+                
+                <!-- logout button with icon -->
+                <a href="index.html" class="logout-btn" aria-label="Log out">
+                    <img src="assets/logout.png" alt="Logout" class="logout-icon" />
+                    <span class="logout-text">Log out</span>
+                </a>
+            </div>
+        </header>
+        
+        <div class="tabs">
+            <a href="student-session.html" class="tab">Session</a>
+            <div class="tab active">My Details</div>
+            <a href="student-feedback.html" class="tab">Feedback</a>
+        </div>
+        
+        <div class="content">
+            <div class="details-form">
+                <!-- Form for new users -->
+                <div id="profile-form-container">
+                    <h2>Fill Personal Details:</h2>
+                    <form class="form-container" id="profile-form">
+                        <div class="form-group">
+                            <label>Full Name:</label>
+                            <input type="text" name="fullName" placeholder="Enter Your Full Name" required minlength="2" pattern="[A-Za-z\s]+">
+                            <span class="error-message" id="fullName-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email Address:</label>
+                            <input type="email" name="email" placeholder="Enter Your Email Address" required>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Phone Number:</label>
+                            <input type="tel" name="phone" placeholder="Enter Your Phone Number" required pattern="[0-9]{10}" maxlength="10">
+                            <span class="error-message" id="phone-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Department:</label>
+                            <input type="text" name="department" placeholder="Enter Your Department" required minlength="2">
+                            <span class="error-message" id="department-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Year:</label>
+                            <select name="year" required>
+                                <option value="">Select Year</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                            </select>
+                            <span class="error-message" id="year-error"></span>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn" onclick="showSuccessView()">Cancel</button>
+                            <button type="submit" class="save-details-btn">Save Details</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Success View for completed profiles -->
+                <div class="success-view" id="success-view" style="display: none;">
+                    <div class="form-container" style="text-align: center;">
+                        <h2 style="color: #1976d2; font-style: italic; margin-bottom: 30px; font-weight: 400;">Details saved successfully</h2>
+                        <button class="view-details-btn" onclick="showDetailsView()" style="background: #1976d2; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px;">View</button>
+                    </div>
+                </div>
+                
+                <!-- Details View -->
+                <div class="details-view" id="details-view" style="display: none;">
+                    <div class="form-container">
+                        <h2 style="color: #1976d2; font-style: italic; margin-bottom: 20px; font-weight: 400;">Details saved successfully</h2>
+                        <h3>Your Details:</h3>
+                        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 12px; font-weight: bold; width: 30%;">Full Name:</td>
+                                <td style="padding: 12px;" id="display-fullName"></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 12px; font-weight: bold;">Email:</td>
+                                <td style="padding: 12px;" id="display-email"></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 12px; font-weight: bold;">Phone:</td>
+                                <td style="padding: 12px;" id="display-phone"></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 12px; font-weight: bold;">Department:</td>
+                                <td style="padding: 12px;" id="display-department"></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ddd;">
+                                <td style="padding: 12px; font-weight: bold;">Year:</td>
+                                <td style="padding: 12px;" id="display-year"></td>
+                            </tr>
+                        </table>
+                        <div class="details-actions" style="text-align: center; margin-top: 20px;">
+                            <button class="edit-btn" onclick="enableModification()" style="background: #ff9800; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer;">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

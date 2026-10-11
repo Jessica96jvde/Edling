@@ -1,0 +1,65 @@
+/* Performance Optimizations for Smoother UI */
+
+/* Enable hardware acceleration for smooth animations */
+.menu-card, .session-item, .form-container, .login-page,
+button, .btn, .user-avatar, .illustration {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Optimize repaints */
+.header, .tabs, .content {
+    contain: layout style paint;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optimize images */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Reduce layout thrashing */
+* {
+    box-sizing: border-box;
+}
+
+/* Optimize animations for 60fps */
+@media (prefers-reduced-motion: no-preference) {
+    * {
+        animation-fill-mode: both;
+    }
+}
+
+/* GPU acceleration for transforms */
+.menu-card:hover, .session-item:hover, button:hover, .btn:hover {
+    transform: translateZ(0);
+}
+
+/* Prevent font loading jumps */
+body {
+    font-display: swap;
+}
+
+/* Optimize background gradients */
+.student-menu-page, .student-details-page, .student-session-page, 
+.student-feedback-page, .login-container {
+    background-attachment: fixed;
+}
+
+/* Smooth focus transitions */
+:focus {
+    transition: box-shadow 0.15s ease-out;
+}
+
+/* Optimize hover states */
+@media (hover: hover) {
+    .menu-card:hover .card-image {
+        transform: scale(1.03) translateZ(0);
+    }
+}

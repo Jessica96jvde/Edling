@@ -1,0 +1,197 @@
+/* Smooth UI Enhancement - Unified styles for consistent, gentle animations */
+
+:root {
+    --transition-fast: 0.15s ease-out;
+    --transition-smooth: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --hover-lift: -2px;
+    --hover-lift-gentle: -1px;
+    --shadow-subtle: 0 2px 8px rgba(13, 71, 161, 0.08);
+    --shadow-hover: 0 4px 16px rgba(13, 71, 161, 0.12);
+    --shadow-focus: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+/* Smooth scrolling for entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced focus states for accessibility */
+*:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+    transition: box-shadow var(--transition-fast);
+}
+
+/* Smooth button transitions */
+button, .btn, .login-btn, .save-details-btn, .register-btn, .submit-feedback-btn {
+    transition: all var(--transition-smooth);
+    transform: translateY(0);
+}
+
+button:hover, .btn:hover, .login-btn:hover, .save-details-btn:hover, 
+.register-btn:hover, .submit-feedback-btn:hover {
+    transform: translateY(var(--hover-lift-gentle));
+    box-shadow: var(--shadow-hover);
+}
+
+/* Gentle card hover effects */
+.menu-card {
+    transition: all var(--transition-gentle);
+    transform: translateY(0) scale(1);
+}
+
+.menu-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(25, 118, 210, 0.15);
+}
+
+/* Smooth session item animations */
+.session-item {
+    transition: all var(--transition-smooth);
+    transform: translateY(0);
+}
+
+.session-item:hover {
+    transform: translateY(var(--hover-lift));
+    box-shadow: var(--shadow-hover);
+}
+
+/* Enhanced input field transitions */
+.input-field, input[type="email"], input[type="tel"], input[type="text"], 
+input[type="password"], select, textarea {
+    transition: all var(--transition-smooth);
+    transform: translateY(0);
+}
+
+.input-field:focus, input:focus, select:focus, textarea:focus {
+    transform: translateY(var(--hover-lift-gentle));
+}
+
+/* Smooth header button animations */
+.home-link, .logout-btn {
+    transition: all var(--transition-smooth);
+    transform: translateY(0);
+}
+
+.home-link:hover, .logout-btn:hover {
+    transform: translateY(var(--hover-lift-gentle));
+}
+
+/* Gentle tab transitions */
+.tab {
+    transition: all var(--transition-smooth);
+    position: relative;
+}
+
+.tab::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--blue-700);
+    transform: scaleX(0);
+    transition: transform var(--transition-smooth);
+}
+
+.tab.active::after {
+    transform: scaleX(1);
+}
+
+/* Smooth star rating animations */
+.star {
+    transition: all var(--transition-fast);
+    transform: scale(1);
+}
+
+.star:hover {
+    transform: scale(1.1);
+}
+
+.star.filled {
+    animation: starFill 0.3s ease-out;
+}
+
+@keyframes starFill {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+
+
+/* Smooth loading states */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Micro-interactions for better feedback */
+.user-avatar {
+    transition: all var(--transition-smooth);
+}
+
+.user-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Smooth dropdown animations */
+.user-select {
+    transition: all var(--transition-smooth);
+}
+
+.user-select:focus {
+    transform: translateY(var(--hover-lift-gentle));
+}
+
+/* Enhanced illustration hover effect */
+.illustration {
+    transition: all var(--transition-gentle);
+}
+
+.illustration:hover {
+    transform: scale(1.02);
+}
+
+/* Smooth card image effects */
+.card-image {
+    transition: all var(--transition-smooth);
+    overflow: hidden;
+}
+
+.menu-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .menu-card:hover, .session-item:hover, button:hover {
+        transform: none;
+    }
+}

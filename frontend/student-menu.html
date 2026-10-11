@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global-font.css" />
+    <link rel="stylesheet" href="css/student-menu.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="student-menu-page">
+        <header class="header">
+            <div class="user-info">
+                <!-- profile image: uses assets/Login.jpg (inline style lets you override per page) -->
+                <div class="user-avatar" style="background-image: url('assets/user.png');" aria-hidden="true"></div>
+                <span>Student Menu</span>
+            </div>
+
+            <div class="header-right">
+                <!-- home button -->
+                <a href="student-menu.html" class="home-link" aria-label="Home">
+                    <img src="assets/home.png" alt="Home" class="home-icon" />
+                </a>
+
+                <!-- logout button with icon -->
+                <a href="index.html" class="logout-btn" aria-label="Log out">
+                    <img src="assets/logout.png" alt="Logout" class="logout-icon" />
+                    <span class="logout-text">Log out</span>
+                </a>
+            </div>
+        </header>
+
+        <main class="menu-grid" role="main" aria-label="Student menu">
+            <a href="student-session.html" class="menu-card" aria-label="Attend Session">
+                <div class="card-image" role="img" aria-label="Attend Session"
+                     style="background-image: url('assets/attend_session.jpg');"></div>
+                <h3>Attend Session</h3>
+            </a>
+
+            <a href="student-details.html" class="menu-card" aria-label="My Details">
+                <div class="card-image" role="img" aria-label="My Details"
+                     style="background-image: url('assets/formfill.webp');"></div>
+                <h3>My Details</h3>
+            </a>
+
+            <a href="student-feedback.html" class="menu-card" aria-label="Feedback">
+                <div class="card-image feedback" role="img" aria-label="Feedback"
+                     style="background-image: url('assets/feedback.jpg');"></div>
+                <h3>Feedback</h3>
+            </a>
+        </main>
+    </div>
+</body>
+</html>
